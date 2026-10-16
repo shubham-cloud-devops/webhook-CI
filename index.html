@@ -1,0 +1,261 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Deployment Project</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111c32;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #29364d;
+        }
+
+        header h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 15px;
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            border-radius: 20px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #a9b8ce;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 12px 24px;
+            background: #0284c7;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        section {
+            padding: 55px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #172338;
+            border: 1px solid #29364d;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #b7c4d8;
+            font-size: 14px;
+        }
+
+        .pipeline {
+            max-width: 800px;
+            margin: auto;
+            background: #172338;
+            border: 1px solid #29364d;
+            padding: 28px;
+            border-radius: 12px;
+        }
+
+        .pipeline p {
+            padding: 10px 0;
+            border-bottom: 1px solid #29364d;
+        }
+
+        .pipeline p:last-child {
+            border-bottom: none;
+        }
+
+        .number {
+            color: #38bdf8;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            background: #111c32;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>DevOpsLab</h2>
+    <nav>
+        <a href="#technologies">Technologies</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="tag">CI/CD Automation Project</div>
+
+        <h1>Automated Website <span>Deployment</span></h1>
+
+        <p>
+            A practical DevOps project demonstrating how GitHub,
+            webhooks, Jenkins and Docker work together to automate
+            website delivery and reduce manual deployment effort.
+        </p>
+
+        <a href="#pipeline" class="button">Explore the Pipeline</a>
+    </section>
+
+    <section id="technologies">
+        <h2 class="section-title">Technology Stack</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Git & GitHub</h3>
+                <p>Version control and source-code management for tracking website changes.</p>
+            </div>
+
+            <div class="card">
+                <h3>Webhooks</h3>
+                <p>Notify Jenkins when a new change is pushed to the repository.</p>
+            </div>
+
+            <div class="card">
+                <h3>Jenkins</h3>
+                <p>Automates the build and deployment process through a CI/CD pipeline.</p>
+            </div>
+
+            <div class="card">
+                <h3>Docker</h3>
+                <p>Packages the website into a container for consistent execution.</p>
+            </div>
+
+            <div class="card">
+                <h3>Apache HTTP Server</h3>
+                <p>Serves the deployed static website to users through a web browser.</p>
+            </div>
+
+            <div class="card">
+                <h3>Linux / Ubuntu</h3>
+                <p>Provides the environment for running Jenkins, Docker and deployment tasks.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pipeline">
+        <h2 class="section-title">Deployment Workflow</h2>
+
+        <div class="pipeline">
+            <p><span class="number">01</span> Developer updates website files.</p>
+            <p><span class="number">02</span> Changes are pushed to GitHub.</p>
+            <p><span class="number">03</span> GitHub webhook triggers Jenkins.</p>
+            <p><span class="number">04</span> Jenkins executes the pipeline.</p>
+            <p><span class="number">05</span> Docker builds the website image.</p>
+            <p><span class="number">06</span> The website container is deployed using Apache.</p>
+            <p><span class="number">07</span> Users access the updated website through the server IP.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">Project Objective</h2>
+
+        <div class="card">
+            <p>
+                The objective of this project is to understand CI/CD
+                automation by integrating source-code management,
+                webhook-based triggers, Jenkins pipelines and Docker
+                containerization. The workflow helps make deployments
+                repeatable, efficient and easier to maintain.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    DevOpsLab | Learning CI/CD, Automation & Containerization
+</footer>
+
+</body>
+</html>
+```
